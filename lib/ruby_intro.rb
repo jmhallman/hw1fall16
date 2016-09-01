@@ -4,6 +4,7 @@
 
 def sum arr
   # YOUR CODE HERE
+  #test commit
 end
 
 def max_2_sum arr

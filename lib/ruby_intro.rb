@@ -39,10 +39,8 @@ def max_2_sum(maxArray)
     end
     #print max1Index
     maxArray.each do |e|
-      if e > max2
-        if maxArray.index(e) != max1Index
+      if e > max2 and maxArray.index(e) != max1Index
           max2 = e
-        end
       end
     end
   end

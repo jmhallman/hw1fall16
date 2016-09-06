@@ -110,4 +110,54 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+
+  def initialize(isbn, price)
+    if isbn == ""
+      raise ArgumentError.new("Must enter an ISBN number")
+    end
+    if price == 0
+      raise ArgumentError.new("Price cannot be zero")
+    end
+    if price < 0
+      raise ArgumentError.new("Price cannot be less than zero")
+    end
+    @isbn = isbn
+    @price = price
+  end
+  
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(new_isbn)
+    @isbn = new_isbn
+  end
+  
+  def price
+    @price
+  end
+  
+  def price=(new_price)
+    @price = new_price
+  end
+  
+  def price_as_string
+    finalPrice = "$" + price.to_s
+    regex1 = /\.[0-9]/
+    regex2 = /\.[0-9][0-9]/
+    
+    if finalPrice =~ regex2
+      return finalPrice
+    end
+    
+    if finalPrice =~ regex1
+      finalPrice = finalPrice + "0"
+    else
+      finalPrice = finalPrice + ".00"
+    end
+    
+    return finalPrice
+    
+  end
+  
 end

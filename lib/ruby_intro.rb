@@ -37,6 +37,7 @@ def max_2_sum(maxArray)
         max1Index = maxArray.index(i)
       end
     end
+    #print max1Index
     maxArray.each do |e|
       if e > max2
         if maxArray.index(e) != max1Index
@@ -64,7 +65,7 @@ def sum_to_n?(array, n)
 
   array.each do |i|
     array.each do |e|
-      if (i + e) == n
+      if (i + e) == n and array.index(i) != array.index(e)
         return true
       end
     end

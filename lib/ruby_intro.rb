@@ -86,7 +86,6 @@ end
 def starts_with_consonant?(s)
   # YOUR CODE HERE
   
-  #s = s.upcase
   regex = /\A(?=[^aeiou])(?=[a-z])/i
   if s =~ regex
     return true
@@ -104,13 +103,6 @@ def binary_multiple_of_4?(s)
   else
     return false
   end
-=begin
-  if regex.match(s) == s
-    return true
-  else
-    return false
-  end
-=end
 
 end
 

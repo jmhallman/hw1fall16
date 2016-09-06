@@ -2,17 +2,77 @@
 
 # Part 1
 
-def sum arr
+def sum(arr)
   # YOUR CODE HERE
   #test commit
+  
+  sumnum = 0
+  if arr.length > 0
+    arr.each do |i|
+      sumnum = sumnum + i
+    end
+  end
+  return sumnum
 end
 
-def max_2_sum arr
+def max_2_sum(maxArray)
   # YOUR CODE HERE
+  
+  max1Index = 0
+
+  if maxArray.length < 1
+    return 0
+  end
+  
+  if maxArray.length < 2
+    return maxArray[0]
+  end
+ 
+  if maxArray.length > 1
+    max1 = maxArray[0]
+    max2 = maxArray[1]
+    maxArray.each do |i|
+      if i > max1
+        max1 = i
+        max1Index = maxArray.index(i)
+      end
+    end
+    maxArray.each do |e|
+      if e > max2
+        if maxArray.index(e) != max1Index
+          max2 = e
+        end
+      end
+    end
+  end
+  
+  maxSum = max1 + max2
+  return maxSum
+  
 end
 
-def sum_to_n? arr, n
+def sum_to_n?(array, n)
   # YOUR CODE HERE
+  
+  if array.length == 0
+    return false
+  end
+  
+  if array.length == 1
+    return false
+  end
+
+  array.each do |i|
+    array.each do |e|
+      if (i + e) == n
+        return true
+      end
+    end
+  end
+  
+  return false
+  
+  
 end
 
 # Part 2

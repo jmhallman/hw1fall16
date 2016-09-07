@@ -18,35 +18,18 @@ end
 def max_2_sum(maxArray)
   # YOUR CODE HERE
   
-  max1Index = 0
 
-  if maxArray.length < 1
+  if maxArray.length == 0
     return 0
   end
   
-  if maxArray.length < 2
+  if maxArray.length == 1
     return maxArray[0]
   end
- 
-  if maxArray.length > 1
-    max1 = maxArray[0]
-    max2 = maxArray[1]
-    maxArray.each do |i|
-      if i > max1
-        max1 = i
-        max1Index = maxArray.index(i)
-      end
-    end
-    #print max1Index
-    maxArray.each do |e|
-      if e > max2 and maxArray.index(e) != max1Index
-          max2 = e
-      end
-    end
-  end
-  
-  maxSum = max1 + max2
-  return maxSum
+
+  newMaxArray = maxArray.sort.last(2)
+  sum = newMaxArray[0] + newMaxArray[1]
+  return sum
   
 end
 
